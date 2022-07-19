@@ -4,7 +4,18 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
+export const replaceZAndVFromString = (string) => {
+  let newStr = ''
+  for (const ch of string) {
+    const lowCh = ch.toLowerCase()
+    if(lowCh === 'z' || lowCh === 'v') {
+      newStr = `${newStr}*`
+    } else {
+      newStr = `${newStr}${ch}`
+    }
+  }
+  return newStr
+};
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
@@ -16,7 +27,9 @@ export const replaceZAndVFromString = (string) => {};
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+export const changeWord = (string, word, newWord) => {
+  return string.replace(word, newWord)
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -24,7 +37,9 @@ export const changeWord = (string, word, newWord) => {};
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
+export const truncate = (string, length) => {
+  return string.substr(0, length)
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -37,7 +52,18 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+export const quantityOfSymbols = (string, symbol) => {
+  let resultStr = ''
+  let resultStrlength = ''
+  const lowStr = str.toLowerCase()
+  for (let letter of lowStr) {
+    if(letter.includes(symbol)) {
+      resultStr = `${resultStr}${letter}`
+      resultStrlength = resultStr.length
+    }
+  }
+  return resultStrlength
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -54,4 +80,19 @@ export const quantityOfSymbols = (string, symbol) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+  const lowSymbol = symbol.toLowerCase()
+  let i = 0
+  let c = 0
+  const lowStr = str.toLowerCase()
+  while(true) {
+    const pos = lowStr.indexOf(symbol, i)
+    if(pos > 0) {
+      i = pos+1
+      c++
+    } else if(pos === -1) {
+      break
+    }
+  }
+  return c
+};
