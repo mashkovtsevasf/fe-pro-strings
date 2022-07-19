@@ -94,5 +94,5 @@ export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
       break
     }
   }
-  return c 
+  return c
 };
