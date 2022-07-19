@@ -54,7 +54,7 @@ export const truncate = (string, length) => {
  */
 export const quantityOfSymbols = (string, symbol) => {
   let resultStr = ''
-  let resultStrlength = ''
+  let resultStrlength = 0
   const lowStr = str.toLowerCase()
   for (let letter of lowStr) {
     if(letter.includes(symbol)) {
@@ -83,16 +83,16 @@ export const quantityOfSymbols = (string, symbol) => {
 export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
   const lowSymbol = symbol.toLowerCase()
   let i = 0
-  let c = 0
+  let count = 0
   const lowStr = str.toLowerCase()
   while(true) {
     const pos = lowStr.indexOf(symbol, i)
     if(pos > 0) {
       i = pos+1
-      c++
+      count++
     } else if(pos === -1) {
       break
     }
   }
-  return c
+  return count
 };
