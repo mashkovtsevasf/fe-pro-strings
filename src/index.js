@@ -61,8 +61,8 @@ export const quantityOfSymbols = (string, symbol) => {
       resultStr = `${resultStr}${letter}`
       resultStrlength = resultStr.length
     }
+    return resultStrlength
   }
-  return resultStrlength
 };
 
 /**
@@ -93,6 +93,6 @@ export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
     } else if(pos === -1) {
       break
     }
+    return count
   }
-  return count
 };
