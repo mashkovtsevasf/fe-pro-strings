@@ -54,15 +54,16 @@ export const truncate = (string, length) => {
  */
 export const quantityOfSymbols = (string, symbol) => {
   let resultStr = ''
-  let resultStrlength = 0
-  const lowStr = str.toLowerCase()
+  let resultStrLength = 0
+  const lowStr = string.toLowerCase()
+  const lowSymbol = symbol.toLowerCase()
   for (let letter of lowStr) {
-    if(letter.includes(symbol)) {
+    if(letter.includes(lowSymbol)) {
       resultStr = `${resultStr}${letter}`
-      resultStrlength = resultStr.length
+      resultStrLength = resultStr.length
     }
   }
-  return resultStrlength
+  console.log(resultStrLength)
 };
 
 /**
