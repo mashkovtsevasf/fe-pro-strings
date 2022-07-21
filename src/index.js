@@ -63,7 +63,7 @@ export const quantityOfSymbols = (string, symbol) => {
       resultStrLength = resultStr.length
     }
   }
-  console.log(resultStrLength)
+  return resultStrLength
 };
 
 /**
@@ -85,9 +85,9 @@ export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
   const lowSymbol = symbol.toLowerCase()
   let i = 0
   let count = 0
-  const lowStr = str.toLowerCase()
+  const lowStr = string.toLowerCase()
   while(true) {
-    const pos = lowStr.indexOf(symbol, i)
+    const pos = lowStr.indexOf(lowSymbol, i)
     if(pos > 0) {
       i = pos+1
       count++
